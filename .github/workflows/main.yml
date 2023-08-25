@@ -12,6 +12,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Ansible Playbook
-        run: ansible-playbook -i inventory.ini -l mysql_servers /home/ubuntu@172-31-33122/database.yml
+        run: ansible-playbook -i inventory.ini -l mysql_servers /home/ubuntu@172.31.33.122/database.yml
         env:
           ANSIBLE_HOST_KEY_CHECKING: false  
