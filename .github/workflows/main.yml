@@ -1,0 +1,17 @@
+name: Run Ansible Playbook
+
+on:
+  workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run Ansible Playbook
+        run: ansible-playbook -i inventory.ini -l mysql_servers database.yml
+        env:
+          ANSIBLE_HOST_KEY_CHECKING: false  
