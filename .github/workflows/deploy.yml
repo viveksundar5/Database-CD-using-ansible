@@ -15,11 +15,14 @@ jobs:
       run: |
         DEPLOY_SQL_CONTENT=$(cat deploy.sql)
         CHANGE_LOG_ENTRY="\/**** Release : 1.0.0 change START on $(date +\%d\ %b\ \%Y\ :\ %r) ****/
-${DEPLOY_SQL_CONTENT}
-\/**** Release : 1.0.0 change END ****/"
+${DEPLOY_SQL_CONTENT}\/**** Release : 1.0.0 change END ****/"
 
-        echo "$CHANGE_LOG_ENTRY" >> change.log
+        
+        echo "$CHANGE_LOG_ENTRY" > change_log_entry.txt
+        cat change.log >> change_log_entry.txt
+        mv change_log_entry.txt change.log
 
+        
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
         git add change.log
@@ -32,4 +35,4 @@ ${DEPLOY_SQL_CONTENT}
     - name: Push changes to GitHub
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PAT_TOKEN }}
