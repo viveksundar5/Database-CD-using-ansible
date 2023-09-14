@@ -1,1 +1,1 @@
-crete table xyz;
+create table xyz;
