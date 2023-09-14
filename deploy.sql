@@ -1,1 +1,1 @@
-crete table xyz;
+crete table abc;
