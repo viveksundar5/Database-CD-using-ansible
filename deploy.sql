@@ -1,1 +1,1 @@
-crete view ab;
+crete table abc;
