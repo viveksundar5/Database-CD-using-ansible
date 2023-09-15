@@ -1,3 +1,6 @@
+/**** Release : 1.0.1 change START on 15 Sep 2023 : 06:50:21 AM ****/
+create table xyz;
+/**** Release : 1.0.1 change END ****/
 \/**** Release : 1.0.0 change START on 14 Sep 2023 : 01:25:10 PM ****/
 crete table abc;
 \/**** Release : 1.0.0 change END ****/
